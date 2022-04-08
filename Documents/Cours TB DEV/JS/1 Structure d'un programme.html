@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://ncode.amorce.org/ressources/Pool/TB_DEV/WEB_Javascript_BASES/JS_01_Structure_programme.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./1_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./1_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./1_files/darcula.css">
+        <!-- <link rel="stylesheet" href="/css/highlight/line-number.css"> -->
+        <link rel="stylesheet" href="./1_files/github-markdown.css">
+        <!-- <link rel="stylesheet" href="/css/markdown_foad.css"> -->
+        <link rel="stylesheet" href="./1_files/menu-markdown.css">
+        <!-- <script src="/js/highlightjs-line-numbers.min.js"></script> -->
+        <script src="./1_files/jquery-3.4.1.min.js"></script>
+        <script src="./1_files/popper.min.js"></script>
+        <script src="./1_files/bootstrap.min.js"></script>
+        <script src="./1_files/highlight.js"></script>
+        </head><body><div class="container"><div class="markdown-body"><h1 id="1">JS 01 : Structure d'un programme</h1>
+<h2 id="2">Objectifs</h2>
+<ul>
+<li>Comprendre les généralités de la programmation et savoir créer un premier programme.</li>
+<li>Connaître les règles et les conventions de syntaxe et de présentation d’un programme.</li>
+<li>Comment déclarer des variables et des constantes, comment les utiliser dans le corps d’un programme.</li>
+<li>Ajouter des commentaires à vos programmes</li>
+</ul>
+<!-- TODO à valider par le STAFF ! -->
+<h2 id="4">Première Approche</h2>
+<p>Si vous lisez ce paragraphe, c'est que vous avez cotoyé le HTML, le CSS et vous avez manipulé le framework BOOTSTRAP.</p>
+<p>Désormais, vous allez dynamiser vos pages Web grâce au langage JAVASCRIPT.</p>
+<p>Pour exécuter votre <strong>programme Javascript</strong> dans vos pages HTML, vous devrez, soit l'inclure dans le <code>&lt;head&gt;</code> entre 2 balises <code>&lt;script&gt;</code> comme montré ci-dessous :</p>
+<pre><code class="language-html hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JAVASCRIPT<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- JAVASCRIPT entre les 2 balises script dans le &lt;head&gt; :--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">alert(<span class="hljs-string">"mon premier script en javascript !"</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<p>ou <strong>importer</strong> un fichier <strong>.js</strong>, pour une bonne pratique, en indiquant son chemin avec la synthaxe :</p>
+<pre><code class="language-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/javascript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>qui doit s'écrire à la fin de votre page HTML avant la fermeture de la balise <code>&lt;/body&gt;</code></p>
+<pre><code class="language-html hljs xml"><span class="hljs-comment">&lt;!-- du code ... --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/javascript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<p><a target="_blank" href="https://ncode.amorce.org/ressources/Pool/TB_DEV/WEB_Javascript_BASES/demojavascript/index.html">Démo JAVASCRIPT</a></p>
+<p>Voici  à quoi la structure de vos pages HTML devront ainsi ressembler; à celle de démo <strong>JAVASCRIPT</strong> :</p>
+<p><img src="./1_files/ArborescenceJS.png" alt="Image d&#39;arborescence HTML-CSS-JS"></p>
+<p>Avec index.html :</p>
+<pre><code class="language-html hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JAVASCRIPT<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">alert(<span class="hljs-string">"mon premier script en javascript !"</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>   
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-12"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: center;"</span>&gt;</span>JAVASCRIPT<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Ma page HTML qui contient un fichier <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>.js<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>qui se trouve dans une balise <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>script<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> en fin de page, <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>avant<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> la <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>fermeture<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> de la <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>balise body<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span> 
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>        
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-5"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Id_btn1"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;</span>Alert()<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Id_btn2"</span><span class="hljs-string">type="button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;</span>Prompt()<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Id_btn3"</span><span class="hljs-string">type="button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;</span>Confirm()<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Id_btn4"</span><span class="hljs-string">type="button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;</span>Console()<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>        
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-12"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"texte1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"texte2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>                
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>        
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/javascript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<p>et javascript.js</p>
+<pre><code class="language-js hljs javascript">
+<span class="hljs-keyword">var</span> bouton1= <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Id_btn1"</span>);
+bouton1.addEventListener(<span class="hljs-string">"click"</span>,clickbtn1);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickbtn1</span>(<span class="hljs-params"></span>)</span>{
+
+    alert(<span class="hljs-string">"Vous avez cliqué sur :\n Alert()"</span>);
+}
+
+<span class="hljs-keyword">var</span> bouton2= <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Id_btn2"</span>);
+bouton2.addEventListener(<span class="hljs-string">"click"</span>,clickbtn2);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickbtn2</span>(<span class="hljs-params"></span>)</span>{
+
+    <span class="hljs-keyword">var</span> prenom = prompt(<span class="hljs-string">"Veuillez saisir votre prénom"</span>);
+    <span class="hljs-keyword">if</span>(prenom==<span class="hljs-literal">null</span>){
+    alert(<span class="hljs-string">"Vous avez cliqué sur Annuler"</span>);
+    <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">var</span> age= <span class="hljs-built_in">parseInt</span>(prompt(<span class="hljs-string">"Veuillez saisir votre age"</span>));
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">isNaN</span>(age)){
+    alert(<span class="hljs-string">"Vous n'avez pas saisi un age correct !\nVeuillez recommencer."</span>);
+    <span class="hljs-keyword">return</span>;
+    }  
+
+    alert(<span class="hljs-string">"Voici ce que vous avez saisi :\n\nVotre prénom : "</span>+prenom+<span class="hljs-string">"\nVotre age : "</span> +age);
+}
+
+<span class="hljs-keyword">var</span> bouton3= <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Id_btn3"</span>);
+bouton3.addEventListener(<span class="hljs-string">"click"</span>,clickbtn3);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickbtn3</span>(<span class="hljs-params"></span>)</span>{
+
+    <span class="hljs-keyword">var</span> reponse = confirm(<span class="hljs-string">"Veuillez cliquer sur OK ou bien Annuler"</span>);
+    <span class="hljs-keyword">if</span> (reponse == <span class="hljs-literal">true</span>) {
+        alert(<span class="hljs-string">"Vous avez cliqué sur OK"</span>);
+    } 
+    <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">"Vous avez cliqué sur Annuler"</span>);
+    }
+
+}
+
+<span class="hljs-keyword">var</span> bouton4= <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Id_btn4"</span>);
+bouton4.addEventListener(<span class="hljs-string">"click"</span>,clickbtn4);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickbtn4</span>(<span class="hljs-params"></span>)</span>{
+
+    <span class="hljs-keyword">var</span> prenom = prompt(<span class="hljs-string">"Veuillez saisir votre prénom"</span>);
+    <span class="hljs-keyword">if</span>(prenom==<span class="hljs-literal">null</span>){
+        alert(<span class="hljs-string">"Vous avez cliqué sur Annuler"</span>);
+    }
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Voici le prénom que vous avez saisi: "</span>+prenom);
+        alert(<span class="hljs-string">"Vérifiez en Console (F12), ce que vous venez de saisir..."</span>);
+    }
+}</code></pre>
+<h2 id="20">Les variables</h2>
+<p>Les données en mémoire sont stockées dans des variables. Il peut par exemple s'agir de données saisies par l'utilisateur ou de résultats obtenus par le programme, intermédiaires ou définitifs.</p>
+<p>Pour employer une image, une variable est une boîte, que le programme (l'ordinateur) va repérer par une étiquette. Pour avoir accès au contenu de la <strong>boîte</strong>, il suffit de la désigner par son étiquette.</p>
+<p>Les noms de variables peuvent être choisis librement par le programmeur (sauf parmi les mots-clés). La liste des mots-clés se trouve dans la documentation en ligne, mais dans un problème, une variable est choisie pour jouer un rôle. Il est souhaitable que l'auteur de l'algorithme s'en souvienne en choisissant des noms évocateurs et en respectant, autant que possible, l'unicité du rôle pour chaque variable.</p>
+<p>Les caractères suivants peuvent être utilisés :</p>
+<ul>
+<li>lettres majuscules : de <code>A</code> à <code>Z</code></li>
+<li>lettres minuscules : de <code>a</code> à <code>z</code> (les minuscules sont considérées comme des caractères différents des majuscules)</li>
+<li>chiffres, de 0 à 9</li>
+<li>les caractères trait souligné (underscore) : <code>_</code> et arobase : <code>@</code></li>
+</ul>
+<p>Exemple : nom des variables à retenir dans un problème de calcul de moyenne de notes :</p>
+<ul>
+<li><code>totalNotes</code> : total des notes d'un(e) élève</li>
+<li><code>nombreNotes</code> : nombre des notes de cet(te) élève</li>
+<li><code>moyenneNotes</code> : moyenne des notes de cet(te) élève</li>
+</ul>
+<blockquote>
+<p>Remarquez le style de nommage des variables : le premier mot est entièrement en lettre minuscules, le second mot commence par une majuscule; on appelle ça la convention <em>camelCase</em>.</p>
+</blockquote>
+<p>Une variable est typée, c'est-à-dire qu'elle possède <strong>un type</strong> : elle peut représenter, par exemple :  </p>
+<ul>
+<li>une chaîne de caractères : <em>Bonjour</em></li>
+<li>un nombre entier : <em>123</em></li>
+<li>un nombre décimal : <em>1.23</em></li>
+<li>d'autres types, que nous verrons plus tard</li>
+</ul>
+<blockquote>
+<p>Les chapitres suivants vous donneront plus de détails sur l'ensemble des types de données en Javascript.</p>
+</blockquote>
+<p>Une variable peut être déclarée à tout moment à l'intérieur du corps du programme. Cependant, la déclaration et l'initialisation d'une variable doivent impérativement précéder la première utilisation de celle-ci. Il est également et généralement préférable de déclarer les variables en début de bloc (juste après l'accolade ouvrante) pour une question de lisibilité.</p>
+<p>Chaque déclaration de variable est construite sur le modèle suivant :</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">type</span> nomDeLaVariable ;</code></pre>
+<p>Exemple : déclarer la variable <code>prenom</code> de type chaîne de caractère (<code>var</code>) :</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">var</span> prenom;</code></pre>
+<p>Une variable peut être initialisée lors de sa déclaration :</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">type</span> nomDeLaVariable = valeurInitiale;</code></pre>
+<p>Exemple : déclarer la variable <code>prenom</code> de type chaîne de caractère (<code>var</code>) avec pour valeur <em>Dave</em> :</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">var</span> prenom = <span class="hljs-string">'Dave'</span>;</code></pre>
+<blockquote>
+<p>On remarque ici qu'il y a des guillemets pour la valeur : ils sont obligatoires. Ces guillemets (ou <em>quotes</em> en anglais) peuvent être simples : <em>'</em> ou doubles : <em>"</em> </p>
+</blockquote>
+<p>Exemple : déclarer la variable <code>age</code> de type entier (<code>int</code>) avec pour valeur <em>18</em> :</p>
+<!--TODO var age = 18 et non int age = 18 -->
+<pre><code class="hljs cpp"><span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;</code></pre>
+<blockquote>
+<p>On remarque ici qu'il n'y a pas de guillemets pour la valeur : il n'y en a pas besoin pour les nombres, qu'ils soient entiers ou décimaux.  </p>
+</blockquote>
+<!--
+Les variables ne sont visibles que dans le bloc d'instructions - bloc défini par des accolades `{` et `}` - dans lequel elles sont définies.
+Comme toutes les instructions du langage Javascript, chaque déclaration de variable DOIT absolument être terminée par un point-virgule `;`.
+Le point-virgule ne constitue pas un séparateur, mais plutôt un terminateur d'instructions.
+-->
+<h2 id="45">Les instructions</h2>
+<p>Une instruction est une ligne de traitement.</p>
+<p>Le caractère point-virgule <code>;</code> est un terminateur. TOUTES les instructions doivent se terminer par un <code>;</code>.</p>
+<p>Les différents identificateurs sont séparés par un séparateur.</p>
+<p>Les séparateurs peuvent être indifféremment l'espace, la tabulation et le saut de ligne.</p>
+<h2 id="50">Les commentaires</h2>
+<p>Les commentaires dans un programme servent :</p>
+<ul>
+<li>à donner aux développeurs des indications sur le fonctionnement d'un programme</li>
+<li>à désactiver (temporairement) des blocs de code</li>
+</ul>
+<p><strong>Les parties de code mises en commentaires ne sont pas exécutées.</strong></p>
+<p>Commentaires sur une seule ligne : on utilise les signes <code>//</code> :</p>
+<pre><code class="hljs cs">    <span class="hljs-comment">// Demande le nom de famille</span>
+    <span class="hljs-keyword">var</span> nom = <span class="hljs-string">"Loper"</span>;</code></pre>
+<p>Dans cet exemple, on fournit une information complémentaire au code (1ère ligne); le code de la seconde ligne sera exécuté (la variable <code>nom</code> aura pour valeur <em>Loper</em>.</p>
+<ul>
+<li>
+<p>Commentaires sur plusieurs lignes : les caractères compris entre <code>/* et</code>*/` ne seront pas interprétés. On utilise cette notation quand il y a plusieurs lignes à commenter.</p>
+<pre><code class="hljs css"><span class="hljs-comment">/* Demande le nom de famille
+var nom = "Loper";
+*/</span></code></pre>
+</li>
+</ul>
+<p>Dans cet exemple, les 2 lignes sont en commentaires, cette fois le code de la seconde ligne ne sera <strong>pas exécuté</strong>.</p>
+<h2 id="59">Les conventions d'écriture</h2>
+<p>Ces conventions ne sont pas des contraintes de syntaxe des langages informatiques. Elles n'existent que pour en faciliter la lecture et font partie d'une sorte de norme implicite que tous les bons développeurs s'obligent à respecter :</p>
+<ul>
+<li>Une seule instruction par ligne, et ce même si tout un programme peut-être écrit sur une seule ligne.</li>
+<li>Les délimiteurs d'un bloc <code>{</code> et <code>}</code> doivent se trouver sur des lignes différentes et être alignés sur la première colonne de sa déclaration.</li>
+<li>A l'intérieur d'un bloc <code>{}</code> les instructions sont indentées (décalées) par un caractère tabulation ou un espace.</li>
+<li>A l'intérieur d'un bloc <code>{}</code> la partie déclaration des variables et la partie instructions sont séparées par une ligne vide.</li>
+</ul>
+<p>Exemple : </p>
+<pre><code class="hljs cs"><span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">18</span>) 
+{
+    <span class="hljs-keyword">var</span> nom = <span class="hljs-string">'Loper'</span>;
+    <span class="hljs-keyword">var</span> prenom = <span class="hljs-string">'Dave'</span>;
+}</code></pre>
+<ul>
+<li>L'instruction <code>if</code> est une condition</li>
+<li>
+</li>
+</ul></div><div class="menu-markdown"><img src="./1_files/menu.png"><div data-id="1" class="titre">JS 01 : Structure d'un programme</div><div data-id="2">Objectifs</div><div data-id="4">Première Approche</div><div data-id="20">Les variables</div><div data-id="45">Les instructions</div><div data-id="50">Les commentaires</div><div data-id="59">Les conventions d'écriture</div></div></div><script>hljs.initHighlightingOnLoad();//hljs.initLineNumbersOnLoad();</script><script src="./1_files/menu-markdown.js"></script></body></html>

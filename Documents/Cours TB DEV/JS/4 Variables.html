@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://ncode.amorce.org/ressources/Pool/TB_DEV/WEB_Javascript_BASES/JS_04_Variables.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./4 Variables_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./4 Variables_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./4 Variables_files/darcula.css">
+        <!-- <link rel="stylesheet" href="/css/highlight/line-number.css"> -->
+        <link rel="stylesheet" href="./4 Variables_files/github-markdown.css">
+        <!-- <link rel="stylesheet" href="/css/markdown_foad.css"> -->
+        <link rel="stylesheet" href="./4 Variables_files/menu-markdown.css">
+        <!-- <script src="/js/highlightjs-line-numbers.min.js"></script> -->
+        <script src="./4 Variables_files/jquery-3.4.1.min.js"></script>
+        <script src="./4 Variables_files/popper.min.js"></script>
+        <script src="./4 Variables_files/bootstrap.min.js"></script>
+        <script src="./4 Variables_files/highlight.js"></script>
+        </head><body><div class="container"><div class="markdown-body"><h1 id="1">JS 04 : Les variables</h1>
+<h2 id="2">La déclaration de variables</h2>
+<p>Les variables contiennent des données qui peuvent être modifiées lors de l'exécution d'un pro-gramme. On y fait référence par le nom de cette variable.
+Pour nommer une variable ou une fonction, le développeur définit des identificateurs.
+Un identificateur doit commencer par une lettre (alphabet ASCII) ou le signe <code>_</code> et se composer de lettres, de chiffres et des caractères <code>_</code> et <code>$</code> (à l'exclusion du blanc). </p>
+<p>Pour rappel JavaScript est sensible à la casse. </p>
+<p>Les variables se déclarent avec l'instruction <code>var</code>. </p>
+<!--
+* avec l'instruction `let`, disponible depuis ES6 : le comportement de `let` est similaire à `var`, sauf que `let` n'est pas reconnu par les navigateurs anciens.
+-->
+<p><strong> Exemple :</strong></p>
+<pre><code class="hljs cs"><span class="hljs-keyword">var</span> num = <span class="hljs-number">1</span> ;
+<span class="hljs-keyword">var</span> prenom = <span class="hljs-string">"Jean"</span> ;
+
+alert(num);
+alert(prenom);</code></pre>
+<p>Testez l'exemple de code.</p>
+<h2 id="9">Les types de données</h2>
+<p>JavaScript utilise 5 types de données :</p>
+<ul>
+<li>Nombre : Tout nombre entier ou avec virgule tel que <code>22</code> ou <code>3.1416</code>. Tout entier en octal ou hexadécimal tel que <code>0387</code>, <code>0xFFA8</code>.              </li>
+<li>Chaîne :  toute suite de caractères comprise entre guillemets ou côtes telle que "suite de caractères" ou 'suite de caractères'</li>
+<li>Booléen : les mots <code>true</code> pour vrai et <code>false</code> pour faux</li>
+<li>Objet : toute utilisation de variable par référence vers tout objet natif JavaScript (Array, Date, String …) ou tout objet du DOM. </li>
+<li><code>null</code> : mot réservé qui ne représente pas de valeur. La valeur null est affectée volontairement à une variable. </li>
+<li><code>undefined</code> : mot réservé qui est renvoyé par une variable référencée qui n'a pas encore été définie (la variable existe mais n'a reçu aucune affectation de valeur).</li>
+</ul>
+<p>Exemples :</p>
+<pre><code class="hljs php"><span class="hljs-keyword">var</span> myVar; <span class="hljs-comment">// le type de la variable myVar est undefined</span>
+myVar = <span class="hljs-number">324</span>;    <span class="hljs-comment">// type number</span>
+myVar = <span class="hljs-string">"Bonjour"</span>;  <span class="hljs-comment">// type string</span>
+myVar = <span class="hljs-keyword">true</span>; <span class="hljs-comment">// type boolean</span>
+myVar = <span class="hljs-keyword">new</span> <span class="hljs-keyword">Array</span>(); <span class="hljs-comment">// type object</span></code></pre>
+<blockquote>
+<p>Notez que, contrairement au langage C ou C++, il ne faut pas obligatoirement déclarer le type de données d'une variable (pas besoin  de préciser <code>int</code>, <code>float</code>, <code>char</code> etc.).</p>
+</blockquote>
+<h4 id="15">Connaître le type d'une donnée</h4>
+<p>Une variable peut changer de type après une affectation. On peut vérifier le type en cours d'une variable avec l'instruction <code>typeof</code> :</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">42</span>); <span class="hljs-comment">// Affiche "number"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">'blubber'</span>); <span class="hljs-comment">// Affiche "string"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>); <span class="hljs-comment">// Affiche "boolean"</span>
+
+<span class="hljs-keyword">var</span> myVar;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVar); <span class="hljs-comment">// Affiche 'undefined'</span></code></pre></div><div class="menu-markdown"><img src="./4 Variables_files/menu.png"><div data-id="1" class="titre">JS 04 : Les variables</div><div data-id="2">La déclaration de variables</div><div data-id="9">Les types de données</div><div data-id="15">&nbsp;&nbsp;&nbsp;&nbsp;Connaître le type d'une donnée</div></div></div><script>hljs.initHighlightingOnLoad();//hljs.initLineNumbersOnLoad();</script><script src="./4 Variables_files/menu-markdown.js"></script></body></html>

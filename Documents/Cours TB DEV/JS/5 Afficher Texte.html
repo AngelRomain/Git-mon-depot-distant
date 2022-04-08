@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)https://ncode.amorce.org/ressources/Pool/TB_DEV/WEB_Javascript_BASES/JS_05_Afficher_Texte.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./5 Afficher Texte_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./5 Afficher Texte_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./5 Afficher Texte_files/darcula.css">
+        <!-- <link rel="stylesheet" href="/css/highlight/line-number.css"> -->
+        <link rel="stylesheet" href="./5 Afficher Texte_files/github-markdown.css">
+        <!-- <link rel="stylesheet" href="/css/markdown_foad.css"> -->
+        <link rel="stylesheet" href="./5 Afficher Texte_files/menu-markdown.css">
+        <!-- <script src="/js/highlightjs-line-numbers.min.js"></script> -->
+        <script src="./5 Afficher Texte_files/jquery-3.4.1.min.js"></script>
+        <script src="./5 Afficher Texte_files/popper.min.js"></script>
+        <script src="./5 Afficher Texte_files/bootstrap.min.js"></script>
+        <script src="./5 Afficher Texte_files/highlight.js"></script>
+        </head><body><div class="container"><div class="markdown-body"><h1 id="1">JS 05 : Afficher du texte</h1>
+<h2 id="2">Les méthodes de l'objet document</h2>
+<p>JavaScript a la possibilité d'accéder aux différents éléments de la page HTML comme des objets. La partie du code HTML qui s'affiche dans la fenêtre du navigateur est un objet de type document (nous décrirons la notion d'objet  dans un autre cours). </p>
+<p>A chaque objet JavaScript, le concepteur du langage a prévu un ensemble de méthodes (ou fonctions dédiées à cet objet) qui lui sont propres. A l'objet document, JavaScript a dédié la méthode <em>écrire dans le document</em>, c'est la méthode <code>write()</code>.</p>
+<p>L'appel de la méthode se fait selon la notation :</p>
+<pre><code class="hljs">nom_de_l'objet.nom_de_la_méthode()</code></pre>
+<p>Pour appeler la méthode <code>write()</code> du document, on note :</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">document</span><span class="hljs-selector-class">.write</span>(); </code></pre>
+<h3 id="9">La méthode <code>write()</code></h3>
+<p>La syntaxe est assez simple soit :</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">document</span>.write(<span class="hljs-string">"votre âge"</span>);</code></pre>
+<p>On peut aussi écrire une variable, soit la variable <code>age</code> :</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> age = <span class="hljs-number">35</span>;
+<span class="hljs-built_in">document</span>.write(age);</code></pre>
+<p>Pour mixer du texte (chaînes de caractères) avec des variables, on utilise ce que l'on appelle la concaténation : un signe "+" va indiquer au programme que la chaîne de caractère doit être interrompue pour afficher la valeur d'une variable. Une fois cette variable affichée, il faut indiquer, par le même signe, la reprise de l'affichage de la chaîne de caractères.</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">document</span>.write(<span class="hljs-string">"Votre âge est : "</span> + age + <span class="hljs-string">"ans"</span>); </code></pre>
+<p>On peut utiliser les balises HTML pour agrémenter ce texte :</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">document</span>.write(<span class="hljs-string">"&lt;b&gt;Votre âge est &lt;/b&gt;"</span> + age); 
+<span class="hljs-built_in">document</span>.write(<span class="hljs-string">"&lt;b&gt;"</span> + <span class="hljs-string">" Votre âge est "</span> + <span class="hljs-string">"&lt;/b&gt;"</span> + age); </code></pre>
+<p> </p>
+<h2 id="19">Les boîtes de dialogue</h2>
+<p>JavaScript a la possibilité, via les méthodes de l'objet <code>window</code>, d'appeler des boîtes de dialogues avec l'utilisateur.</p>
+<blockquote>
+<p>Précision : contrairement à <code>document.write()</code>, le code HTML n'est pas supporté par les méthodes de l'objet <code>window</code>.</p>
+</blockquote>
+<h3 id="22">La méthode <code>alert()</code></h3>
+<p>La méthode <code>alert()</code> affiche une boîte de dialogue dans laquelle est reproduite la valeur (variable et/ou chaîne de caractères) de l'argument qui lui a été fourni. Cette boîte bloque le programme en cours tant que l'utilisateur n'aura pas cliqué sur "OK".</p>
+<pre><code class="hljs coffeescript">MyVar = <span class="hljs-string">"Bonjour"</span>;
+<span class="hljs-built_in">window</span>.alert(myVar);
+<span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"chaîne de caractères"</span>);
+<span class="hljs-built_in">window</span>.alert(myVar + <span class="hljs-string">"chaîne de caractères"</span>);</code></pre>
+<p>Ligne 2 :</p>
+<p><img src="./5 Afficher Texte_files/js_04_alert_01.png" alt="1"></p>
+<p>Ligne 3 : </p>
+<p><img src="./5 Afficher Texte_files/js_04_alert_02.png" alt="2"></p>
+<p>Ligne 4 : </p>
+<p><img src="./5 Afficher Texte_files/js_04_alert_03.png" alt="3"></p>
+<blockquote>
+<p>Pour écrire sur plusieurs lignes, utiliser un saut de ligne qui se fait avec le signe <code>\n</code>.</p>
+</blockquote>
+<h3 id="32">La méthode <code>prompt()</code></h3>
+<p>JavaScript vous propose une autre boîte de dialogue, dans le cas présent appelée boîte d'invite, qui est composée d'un champ comportant une entrée à compléter par l'utilisateur. Cette entrée possède aussi une valeur par défaut facultative. </p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> reponse1 = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">"Saisissez votre nom"</span>);
+<span class="hljs-keyword">var</span> reponse2 = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">"Saisissez votre couleur préférée"</span>);</code></pre>
+<p>Ligne 2 :</p>
+<p><img src="./5 Afficher Texte_files/js_04_prompt.png" alt="4"></p>
+<ul>
+<li>En cliquant sur <em>OK</em>, la méthode renvoie la valeur tapée par l'utilisateur ou la réponse proposée par défaut </li>
+<li>Si l'utilisateur clique sur <em>Annuler</em>, la valeur <code>null</code> est alors renvoyée</li>
+</ul>
+<h3 id="38">La méthode <code>confirm()</code></h3>
+<p>Cette méthode affiche une boîte de dialogue avec 2 boutons <em>OK</em> et <em>Annuler</em>. </p>
+<ul>
+<li>
+<p>En cliquant sur <em>OK</em>, la méthode renvoie la valeur <code>true</code>, ou <code>false</code> si on a cliqué sur <em>Annuler</em>. Ce qui peut permettre, par exemple, de choisir une option dans un programme.</p>
+<pre><code class="hljs coffeescript"><span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.confirm(<span class="hljs-string">"Voulez-vous continuer ?"</span>) == <span class="hljs-literal">true</span>) 
+{ 
+   …
+}</code></pre>
+</li>
+</ul>
+<p><img src="./5 Afficher Texte_files/js_04_confirm.png" alt="5">
+ </p>
+<h2 id="42">Afficher des informations dans la console</h2>
+<p>L'objet <em>console</em> est un élément essentiel lors de vos développements. Il permet d'afficher des informations de débogage (avertissements et erreurs de code, affichage de la valeur des variables etc.), précieuses pour la mise au point des scripts.</p>
+<p>La console permet aussi de visualiser le code HTML qui n'est pas interprété dans les méthodes de l'objet <code>window</code>.</p>
+<blockquote>
+<p>La  console est un outil conçu uniquement pour les développeurs; on ne doit pas y afficher d'informations pour dialoguer avec l'internaute (utiliser <code>alert()</code> ou <code>prompt()</code>).</p>
+</blockquote>
+<h3 id="46">La méthode <code>log</code></h3>
+<p>La console est incluse dans les outils de développement des navigateurs Chrome et Firefox, pour l'afficher faire touche <code>F12</code> puis cliquer sur l'onglet <em>console</em>.</p>
+<p>Ensuite, pour y afficher quelque chose, il faut utiliser la méthode <code>log</code> de permet d'afficher des informations dans la console.</p>
+<pre><code class="hljs cpp">console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"texte affiché dans la console"</span>);</code></pre>
+<h2 id="50">Exercice</h2>
+<ul>
+<li>Créer un script qui demande successivement à l'utilisateur son nom puis son prénom.</li>
+<li>La page demande ensuite à l'utilisateur s'il est un homme ou une femme.</li>
+<li>Enfin, la page affiche les informations sur l'utilisateur.</li>
+</ul>
+<p>Résultats à obtenir :</p>
+<p><img src="./5 Afficher Texte_files/js_04_exercices.png" alt="6"> </p></div><div class="menu-markdown"><img src="./5 Afficher Texte_files/menu.png"><div data-id="1" class="titre">JS 05 : Afficher du texte</div><div data-id="2">Les méthodes de l'objet document</div><div data-id="9">&nbsp;&nbsp;&nbsp;&nbsp;La méthode <code>write()</code></div><div data-id="19">Les boîtes de dialogue</div><div data-id="22">&nbsp;&nbsp;&nbsp;&nbsp;La méthode <code>alert()</code></div><div data-id="32">&nbsp;&nbsp;&nbsp;&nbsp;La méthode <code>prompt()</code></div><div data-id="38">&nbsp;&nbsp;&nbsp;&nbsp;La méthode <code>confirm()</code></div><div data-id="42">Afficher des informations dans la console</div><div data-id="46">&nbsp;&nbsp;&nbsp;&nbsp;La méthode <code>log</code></div><div data-id="50">Exercice</div></div></div><script>hljs.initHighlightingOnLoad();//hljs.initLineNumbersOnLoad();</script><script src="./5 Afficher Texte_files/menu-markdown.js"></script></body></html>

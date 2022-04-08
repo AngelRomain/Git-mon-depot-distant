@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://ncode.amorce.org/ressources/Pool/TB_DEV/Evaluation_TB_JS/js_evaluation_tb.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./JS Evaluation tb_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./JS Evaluation tb_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./JS Evaluation tb_files/darcula.css">
+        <!-- <link rel="stylesheet" href="/css/highlight/line-number.css"> -->
+        <link rel="stylesheet" href="./JS Evaluation tb_files/github-markdown.css">
+        <!-- <link rel="stylesheet" href="/css/markdown_foad.css"> -->
+        <link rel="stylesheet" href="./JS Evaluation tb_files/menu-markdown.css">
+        <!-- <script src="/js/highlightjs-line-numbers.min.js"></script> -->
+        <script src="./JS Evaluation tb_files/jquery-3.4.1.min.js"></script>
+        <script src="./JS Evaluation tb_files/popper.min.js"></script>
+        <script src="./JS Evaluation tb_files/bootstrap.min.js"></script>
+        <script src="./JS Evaluation tb_files/highlight.js"></script>
+        </head><body><div class="container"><div class="markdown-body"><h1 id="1">Evaluation Javascript pour les groupes TB</h1>
+<blockquote>
+<p>Vous devez réaliser cette évaluation seul, sans l'aide de vos collègues ni celle de vos formateurs. Vous pouvez vous aider d'internet et de vos cours.</p>
+<p>Bien lire les énoncés et respecter les consignes.</p>
+<p>Durée de l'évaluation : 2 jours.</p>
+<p>Ne bloquez pas trop longuement sur un exercice, passez au suivant et revenez dessus plus tard. </p>
+</blockquote>
+<h2 id="3">Exercice 1 - Calcul du nombre de jeunes, de moyens et de vieux</h2>
+<p>Il s'agit de dénombrer les personnes d'âge strictement inférieur à 20 ans, les personnes d'âge strictement supérieur à 40 ans et celles dont l'âge est compris entre 20 ans et 40 ans (20 ans et 40 ans y compris).</p>
+<p>Le programme doit demander les âges successifs.</p>
+<p>Le comptage est arrêté dès la saisie d'un centenaire. Le centenaire est compté.</p>
+<p>Donnez le programme Javascript correspondant qui affiche les résultats.</p>
+<h2 id="8">Exercice 2 : Table de multiplication</h2>
+<p>Ecrivez une fonction qui affiche une table de multiplication.</p>
+<p>Votre fonction doit prendre un paramètre qui permet d'indiquer quelle table afficher.</p>
+<p>Par exemple, <code>TableMultiplication(7)</code> doit afficher : </p>
+<p>1 x 7 = 7</p>
+<p>2 x 7 = 14</p>
+<p>3 x 7 = 21
+...</p>
+<h2 id="15">Exercice 3 : recherche d'un prénom</h2>
+<p>Un prénom est saisi au clavier. On le recherche dans le tableau <code>tab</code> donné ci-après. </p>
+<p>Si le prénom est trouvé, on l'élimine du tableau en décalant les cases qui le suivent, et en mettant à blanc la dernière case.
+Si le prénom n'est pas trouvé un message d'erreur apparait et aucun prénom ne se supprime.</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">var</span> tab = [<span class="hljs-string">"Audrey"</span>, <span class="hljs-string">"Aurélien"</span>, <span class="hljs-string">"Flavien"</span>, <span class="hljs-string">"Jérémy"</span>, <span class="hljs-string">"Laurent"</span>, <span class="hljs-string">"Melik"</span>, <span class="hljs-string">"Nouara"</span>, <span class="hljs-string">"Salem"</span>, <span class="hljs-string">"Samuel"</span>, <span class="hljs-string">"Stéphane"</span>];</code></pre>
+<p>( exemple : ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", " "]; )</p>
+<h2 id="20">Exercice 4 : total d'une commande</h2>
+<p>A partir de la saisie du prix unitaire noté PU d'un produit et de la quantité commandée QTECOM, afficher
+le prix à payer PAP, en détaillant la remise REM et le port PORT, sachant que :</p>
+<ul>
+<li>TOT = ( PU * QTECOM )</li>
+<li>la remise est de 5% si TOT est compris entre 100 et 200 € et de 10% au-delà</li>
+<li>le port est gratuit si le prix des produits ( le total remisé ) est supérieur à 500 €. Dans le cas contraire, le
+port est de 2%</li>
+<li>la valeur minimale du port à payer est de 6 €</li>
+</ul>
+<p>Testez tous les cas possibles afin de vous assurez que votre script fonctionne.</p>
+<p><strong>Ci-dessous, un jeu de tests</strong> :</p>
+<ul>
+<li>Saisir 600 € et quantité = 1 : remise 10% (-60 €) soit 540,00 et frais port = 0; à payer : 540 € </li>
+<li>Saisir 501 € et quantité = 1 : remise 10% (-50,1 €) soit 450,90 et frais port 2% (de 450,90 €) soit +9,01 € ; à payer : 450,90+9.01 = 459,91 €. </li>
+<li>Saisir 100 € et quantité = 2 : 200 € donc remise 5% soit 190 € et frais de port 2% soit 3,8 € mini 6 €; à payer : 190+6 = 196 €  </li>
+<li>Saisir 3 € et quantité = 1 : remise 0, frais de port 2% soit 0.06 € donc le minimum de 6 € s'applique; à payer : 3+6 = 9 €</li>
+</ul>
+<h2 id="26">Exercice  5 : vérification d'un formulaire</h2>
+<p>Effectuez le contrôle de saisie de votre formulaire Jarditou en Javascript. </p>
+<p>Lorsqu'une erreur est détectée, l'utilisateur doit en être informé grâce à l'affichage d'un message sous le champ concerné. </p>
+<p>Le formulaire ne peut être envoyé que lorsque tout est bon.</p></div><div class="menu-markdown"><img src="./JS Evaluation tb_files/menu.png"><div data-id="1" class="titre">Evaluation Javascript pour les groupes TB</div><div data-id="3">Exercice 1 - Calcul du nombre de jeunes, de moyens et de vieux</div><div data-id="8">Exercice 2 : Table de multiplication</div><div data-id="15">Exercice 3 : recherche d'un prénom</div><div data-id="20">Exercice 4 : total d'une commande</div><div data-id="26">Exercice  5 : vérification d'un formulaire</div></div></div><script>hljs.initHighlightingOnLoad();//hljs.initLineNumbersOnLoad();</script><script src="./JS Evaluation tb_files/menu-markdown.js"></script></body></html>

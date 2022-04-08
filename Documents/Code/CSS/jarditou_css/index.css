@@ -1,0 +1,90 @@
+/* BANDES NOIRES  QUI PRENNENT TOUTE LA PAGE POUR LES LIENS */
+ul
+{background-color: black;}
+
+li
+{color: aliceblue;}
+
+a
+{color: aliceblue;}
+
+
+#a {
+  display: flex; flex-direction: column-reverse; 
+
+}
+
+ul {
+  /* Ils auront exactement une largeur de 100px */
+  max-width: 100%;
+  /* Hauteur définie automatiquement en fonction de la taille du contenu */
+  height: auto;
+  /* La distance entre le contenu et la bordure est 
+  20px à droite et à gauche et est 
+  10px en haut et en bas */
+  padding: 10px 20px 10px 20px;
+  /* On définit une bordure noire, large de 5px */
+  border: 5px solid black;
+  /* La distance minimale entre un paragraphe
+  et une autre boîte au-dessus ou en-dessous
+  sera de 20px */
+  }
+
+
+
+
+ .logo {
+   max-width:100%;
+  max-height: 100%; 
+} 
+ 
+/* IMAGE  S'ADAPTE A L'ECRAN */
+
+.promotion { 
+  width:100%;
+height: 100%; 
+}
+
+
+  head {
+height: auto;
+border: 5px;
+display: inline;
+margin-right: 50px;
+}
+
+  h2{
+display: inline-block;
+padding: 50px 500px 50px 50px;
+border: 50px solid black; 
+}
+
+
+
+/* TEXTE DES LIENS EN BLANC */
+
+   a {
+     color: white;
+   }
+
+   
+/* METTRE 2 DIV COTE À COTE DANS UNE DIV MAITRE */
+
+
+
+.boitemaitre{
+  display: flex;
+}
+
+.boite1{
+  flex: 1;
+}
+
+
+.boite2 {
+  background-color:gray;
+ flex: 1;
+}
+
+
+
